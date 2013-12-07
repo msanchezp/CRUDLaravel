@@ -10,7 +10,7 @@ class Admin_UsersController extends \BaseController {
 	public function index()
 	{
 		//
-		$users = User::all();
+		$users = User::paginate(2);
 		//dd($users)
         return View::make('admin/users/list')->with('users', $users);
 	}
@@ -66,6 +66,15 @@ class Admin_UsersController extends \BaseController {
 	public function show($id)
 	{
 		//
+		$user=User::find($id);
+		
+		if (is_null ($user))
+		{
+			App::abort(404,'No se encontró el usuario');
+		}
+
+		return View::make('admin/users/show')->with('user',$user);
+		
 	}
 
 	/**
@@ -77,6 +86,13 @@ class Admin_UsersController extends \BaseController {
 	public function edit($id)
 	{
 		//
+		$user = User::find($id);
+		if (is_null ($user))
+		{
+			App::abort(404,'No se encontró el usuario');
+		}
+
+		return View::make('admin/users/form')->with('user', $user);
 	}
 
 	/**

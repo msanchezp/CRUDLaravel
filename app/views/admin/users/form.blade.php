@@ -18,6 +18,10 @@
 
 <h1>Crear Usuarios</h1>
 
+<p>
+    <a href="{{ route('admin.users.index') }}" class="btn btn-success">Ver lista de Usuarios</a>
+  </p>
+
 {{-- Reemplazamos Form::open por Form::model: --}}
 {{ Form::model($user, array('route' => 'admin.users.store', 'method' => 'POST'), array('role' => 'form')) }}
 

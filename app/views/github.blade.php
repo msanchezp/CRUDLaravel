@@ -32,6 +32,10 @@
             text-decoration:underline;
         }
 
+        img{
+            max-width: 200px;
+        }
+
         ul li {
             display:inline;
             margin:0 1.2em;
@@ -45,8 +49,8 @@
 </head>
 <body>
     <div class="welcome">
-        <a href="http://cristalab.com" title="Cristalab"><img src="http://www.cristalab.com/images/header/logo.png"></a>
-        <h1>Hello Cristalab!</h1>
+        <a href="https://github.com/msanchezp" title="GitHub"><img src="{{('assets/img/github.png') }}"></a>
+        <h1>Hello Laravel!</h1>
     </div>
 </body>
 </html>

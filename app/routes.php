@@ -16,9 +16,9 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('cristalab', function()
+Route::get('github', function()
 {
-	return View::make('cristalab');
+	return View::make('github');
 });
 
 Route::get('hello/{usuario}', function($usuario)
