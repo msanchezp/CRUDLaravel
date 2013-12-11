@@ -26,5 +26,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     {{ HTML::script('assets/js/bootstrap.min.js') }}
     {{--<script src="{{ assets('assets/js/bootstrap.min.js') }}"></script>--}}
+    {{ HTML::script('assets/js/admin.js') }}
   </body>
 </html>

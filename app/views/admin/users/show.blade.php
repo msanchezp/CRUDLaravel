@@ -1,24 +1,28 @@
 @extends ('admin/layout')
 
-@section ('title') Datos de Usuario @stop
+@section ('title') User {{ $user->full_name }} @stop
 
 @section ('content')
 
-  <h1>Datos de Usuario</h1>
+<style type="text/css">
+  *{
+    text-align: center;
+  }
+</style>
 
-  <p>
-    <a href="{{ route('admin.users.index') }}" class="btn btn-primary">Ver Lista General</a>
-  </p>
-  
-  <table class="table table-striped">
-    <tr>
-        <th>Full name</th>
-        <th>Email</th>
-    </tr>
-    <tr>
-        <td>{{ $user->full_name }}</td>
-        <td>{{ $user->email }}</td>
-    </tr>
-  </table>
+<h2>User #{{ $user->id }}</h2>
+
+<p>Full name: {{ $user->full_name }}</p>
+<p>Email: {{ $user->email }}</p>
+
+<p>
+  <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary">
+    Editar
+  </a>    
+</p>
+
+{{ Form::model($user, array('route' => array('admin.users.destroy', $user->id), 'method' => 'DELETE'), array('role' => 'form')) }}
+  {{ Form::submit('Eliminar usuario', array('class' => 'btn btn-danger')) }}
+{{ Form::close() }}
 
 @stop
